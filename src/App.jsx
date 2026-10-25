@@ -6,6 +6,7 @@ import PrizePage from "./pages/prize/PrizePage.jsx";
 import SponsorsPage from "./pages/sponser/SponsorsPage.jsx";
 import MentorsPage from "./pages/mentor/MentorsPage.jsx";
 import FAQSection from "./pages/faq/FAQSection.jsx";
+import MemoriesPage from "./pages/memories/MemoriesPage.jsx";
 import RegisterCTA from "./RegisterCTA/index.js";
 import Footer from "./Footer/Footer.jsx";
 
@@ -26,6 +27,7 @@ export default function App() {
         </div>
         <MentorsPage />
         <FAQSection />
+        <MemoriesPage />
         <RegisterCTA />
       </main>
 

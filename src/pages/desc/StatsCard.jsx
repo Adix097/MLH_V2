@@ -145,13 +145,13 @@ export function StatsCard() {
           <div className="stat-label">TEAMS</div>
         </motion.div>
 
-        {/* Quadrant 4: ₹XXK+ - IN PRIZES (Warm Off-White) */}
+        {/* Quadrant 4: ₹30K+ - IN PRIZES (Warm Off-White) */}
         <motion.div
           className="stat-quadrant quadrant-white"
           variants={quadrantVariants}
         >
           <div className="stat-number">
-            <span>₹XXK+</span>
+            <span>₹30K+</span>
           </div>
           <div className="stat-label">IN PRIZES</div>
         </motion.div>

@@ -232,6 +232,31 @@
     translate 0.15s ease;
 }
 
+/* Give the Ricky bronze logo the same framed sponsor treatment. */
+.sponsor-card.tier-bronze .sponsor-logo-link {
+  position: relative;
+  min-width: 160px;
+  min-height: 64px;
+  padding: 18px 32px;
+  background: #ffffff;
+  border: 2px solid #000000;
+  box-shadow: 5px 5px 0 #000000;
+  transition: box-shadow 0.15s ease, translate 0.15s ease;
+}
+
+.sponsor-card.tier-bronze .sponsor-logo-link::after {
+  content: '';
+  position: absolute;
+  inset: 5px;
+  border: 1.5px solid #000000;
+  pointer-events: none;
+}
+
+.sponsor-card.tier-bronze .sponsor-logo-link:hover {
+  box-shadow: 7px 7px 0 #000000;
+  translate: -1px -1px;
+}
+
 /* Inner inset border — the "box inside box" effect */
 .sponsor-card.tier-silver .sponsor-logo-link::after {
   content: '';
@@ -294,6 +319,12 @@
   }
 
   .sponsor-card.tier-silver .sponsor-logo-link {
+    padding: 12px 18px;
+    min-width: 130px;
+    min-height: 56px;
+  }
+
+  .sponsor-card.tier-bronze .sponsor-logo-link {
     padding: 12px 18px;
     min-width: 130px;
     min-height: 56px;

@@ -2,6 +2,7 @@ import mlhLogo from '../assets/images/image 6.png';
 import githubLogo from '../assets/images/GitHub.png';
 import digitalOceanLogo from '../assets/images/DigitalOcean.png';
 import awsLogo from '../assets/images/AWS.png';
+import rickyLogo from '../../ricky-logo.svg';
 
 /**
  * Sponsors Data Configuration
@@ -53,6 +54,13 @@ export const SPONSORS_CONFIG = [
     id: 'bronze',
     tierLabel: 'BRONZE SPONSOR',
     subtitle: 'ENABLING OPEN\nINNOVATION',
-    sponsors: []
+    sponsors: [
+      {
+        id: 'ricky',
+        name: 'Ricky',
+        logo: rickyLogo,
+        logoHeight: '96px'
+      }
+    ]
   }
 ];

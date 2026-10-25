@@ -224,7 +224,7 @@ export default function PrizePage() {
           <motion.div className="prize-heading-block" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp(0)}>
             <h1 className="prize-heading">What's at Stake?</h1>
             <motion.p className="prize-pool-text" variants={fadeUp(0.2)}>
-              ₹50,000 prize pool — for builders, creators &amp; open-source contributors
+              ₹30,000+ prize pool — for builders, creators &amp; open-source contributors
             </motion.p>
             <motion.div className="prize-heading-rule" aria-hidden="true" variants={drawRule(0.4)} style={{ transformOrigin: "left center" }} />
           </motion.div>

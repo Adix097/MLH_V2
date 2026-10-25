@@ -1,73 +1,38 @@
-import headingImg from "../../assets/images/Group 2.png";
-import tagImg from "../../assets/images/Group 3.png";
-import { MENTORS_CONFIG } from "../../data/mentorsData.js";
+import firstPlacePhoto from "../../../Tung_tung_sahur download.jpg";
+import secondPlacePhoto from "../../../ranger_win.JPG";
+import thirdPlacePhoto from "../../../whey_win.jpg";
 import "./MentorsPage.css";
 
-/**
- * MentorsPage Component
- * Displays the mentors showcase with a continuous horizontal auto-scrolling carousel.
- */
-export default function MentorsPage({ mentors = MENTORS_CONFIG }) {
-  // Duplicate array to enable a seamless infinite marquee loop
-  const displayMentors = [...mentors, ...mentors];
+const WINNERS = [
+  { place: "1st", team: "TungTungTungSahur", photo: firstPlacePhoto },
+  { place: "2nd", team: "Ai Rangers", photo: secondPlacePhoto },
+  { place: "3rd", team: "Whey", photo: thirdPlacePhoto },
+];
 
+export default function MentorsPage() {
   return (
-    <section className="mentors-container">
-      <div className="mentors-wrapper">
-        {/* Section Header */}
-        <header className="mentors-header">
-          <img
-            src={headingImg}
-            alt="MEET THE MENTORS & JUDGES."
-            className="mentors-title-img"
-          />
-          <img
-            src={tagImg}
-            alt="GUIDE . REVIEW . SUPPORT"
-            className="mentors-tag-img"
-          />
+    <section className="winners-container" aria-labelledby="winners-heading">
+      <div className="winners-wrapper">
+        <header className="winners-header">
+          <p className="winners-kicker">HACKTOBERFEST 2026</p>
+          <h2 id="winners-heading" className="winners-title">MEET OUR WINNERS.</h2>
+          <p className="winners-subtitle">Celebrating the teams that built, shipped, and stood out.</p>
+          <div className="winners-rule" aria-hidden="true" />
         </header>
 
-        {/* Mentors Carousel Track */}
-        <div className="mentors-carousel-viewport">
-          <ul className="mentors-carousel-track">
-            {displayMentors.map((mentor, index) => (
-              <li key={`${mentor.id}-${index}`} className="mentor-card">
-                <div className="mentor-photo-wrap">
-                  {mentor.avatar ? (
-                    <img
-                      src={mentor.avatar}
-                      alt={mentor.name}
-                      className="mentor-avatar-img"
-                      style={{
-                        objectPosition:
-                          mentor.objectPosition || "center center",
-                      }}
-                    />
-                  ) : (
-                    <div className="mentor-card-placeholder" />
-                  )}
-                </div>
-
-                <div className="mentor-card-meta">
-                  <h3 className="mentor-card-name">{mentor.name}</h3>
-                  <p className="mentor-card-role">{mentor.role}</p>
-                </div>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        {/* Info Box and Action Button */}
-        <footer className="mentors-bottom-row">
-          <div className="mentors-info-box">
-            <p className="mentors-info-text">
-              OUR MENTORS AND JUDGES ARE INDUSTRY PROFESSIONALS , RESEARCHERS ,
-              AND EXPERIENCED DEVELOPERS WHO ARE HERE TO GUIDE YOU , ANSWER YOUR
-              QUESTIONS AND EVALUATE THE PROJECTS
-            </p>
-          </div>
-        </footer>
+        <ol className="winners-grid">
+          {WINNERS.map((winner) => (
+            <li className={`winner-card winner-card--${winner.place === "1st" ? "first" : winner.place === "2nd" ? "second" : "third"}`} key={winner.place}>
+              <div className="winner-photo-wrap">
+                <img className="winner-photo" src={winner.photo} alt={`${winner.team} winning team`} />
+              </div>
+              <div className="winner-meta">
+                <span className="winner-place">{winner.place} PLACE</span>
+                <h3 className="winner-team">{winner.team}</h3>
+              </div>
+            </li>
+          ))}
+        </ol>
       </div>
     </section>
   );
